@@ -7,7 +7,7 @@
       "openFiles": [
         "README.md",
         "streamlit_app.py"
-      ]
+      ]pip install –r requirements.txt 
     },
     "vscode": {
       "settings": {},
