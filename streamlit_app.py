@@ -10,10 +10,15 @@ st.write('이것은 일반 텍스트입니다.')
 if st.button('버튼을 눌러보세요!'):
     st.success('버튼이 눌렸습니다!')
 
+
 # 입력창
 name = st.text_input('이름을 입력하세요:')
 if name:
     st.write(f'안녕하세요, {name}님!')
+
+# 성별 선택
+gender = st.radio('성별을 선택하세요:', ['남성', '여성'])
+st.write(f'선택한 성별: {gender}')
 
 # 슬라이더
 age = st.slider('나이', 0, 100, 25)
