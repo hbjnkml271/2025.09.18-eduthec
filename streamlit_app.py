@@ -1,43 +1,17 @@
 import streamlit as st
 
-st.title('Streamlit 데모 앱')
-st.header('여러가지 Streamlit 요소 예시')
+st.title('학교급 및 학년 선택')
 
-# 텍스트
-st.write('이것은 일반 텍스트입니다.')
+# 학교급 선택
+school_type = st.radio('학교급을 선택하세요:', ['초등학교', '중학교', '고등학교'])
 
-# 버튼
-if st.button('버튼을 눌러보세요!'):
-    st.success('버튼이 눌렸습니다!')
-
-
-# 입력창
-name = st.text_input('이름을 입력하세요:')
-if name:
-    st.write(f'안녕하세요, {name}님!')
-
-# 성별 선택
-gender = st.radio('성별을 선택하세요:', ['남성', '여성'])
-st.write(f'선택한 성별: {gender}')
-
-# 슬라이더
-age = st.slider('나이', 0, 100, 25)
-st.write(f'선택한 나이: {age}')
-
-# 체크박스
-if st.checkbox('차트 보여주기'):
-    import numpy as np
-    import pandas as pd
-    df = pd.DataFrame(
-        np.random.randn(20, 3),
-        columns=['a', 'b', 'c']
-    )
-    st.line_chart(df)
-
-# 이미지 (귀여운 감자/고구마 캐릭터, 선생님 느낌)
-st.image('https://cdn.pixabay.com/photo/2023/03/13/13/36/potato-7848572_1280.png', caption='감자 선생님 캐릭터(출처: pixabay)')
-
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+# 학년 선택 (학교급에 따라 동적으로 변경)
+if school_type == '초등학교':
+    grade = st.radio('학년을 선택하세요:', [f'{i}학년' for i in range(1, 7)])
+    st.write(f'선택한 학교급: {school_type}, 학년: {grade}')
+elif school_type == '중학교':
+    grade = st.radio('학년을 선택하세요:', [f'{i}학년' for i in range(1, 4)])
+    st.write(f'선택한 학교급: {school_type}, 학년: {grade}')
+elif school_type == '고등학교':
+    grade = st.radio('학년을 선택하세요:', [f'{i}학년' for i in range(1, 4)])
+    st.write(f'선택한 학교급: {school_type}, 학년: {grade}')
