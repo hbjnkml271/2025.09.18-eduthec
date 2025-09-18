@@ -34,8 +34,8 @@ if st.checkbox('차트 보여주기'):
     )
     st.line_chart(df)
 
-# 이미지
-st.image('https://static.streamlit.io/examples/dog.jpg', caption='강아지 이미지')
+# 이미지 (귀여운 감자/고구마 캐릭터, 선생님 느낌)
+st.image('https://cdn.pixabay.com/photo/2023/03/13/13/36/potato-7848572_1280.png', caption='감자 선생님 캐릭터(출처: pixabay)')
 
 st.title("🎈 My new app")
 st.write(
